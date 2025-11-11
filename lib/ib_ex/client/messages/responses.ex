@@ -70,7 +70,7 @@ defmodule IbEx.Client.Messages.Responses do
     "87" => Messages.News.HistoricalNewsEnd,
     "88" => "head_timestamp",
     "89" => "histogram_data",
-    "90" => "historical_data_update",
+    "90" => Messages.HistoricalBarData.Update,
     "91" => "reroute_mkt_data_req",
     "92" => "reroute_mkt_depth_req",
     "93" => "market_rule",
