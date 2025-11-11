@@ -10,7 +10,7 @@ defmodule IbEx.Client.Types.Bar do
             close: nil,
             volume: nil,
             vwap: nil,
-            num_trades: nil
+            trades: nil
 
   alias IbEx.Client.Protocols.Traceable
 
@@ -22,7 +22,7 @@ defmodule IbEx.Client.Types.Bar do
         close_str,
         volume_str,
         vwap_str,
-        num_trades_str
+        trades_str
       ]) do
     case DateTime.from_unix(String.to_integer(ts)) do
       {:ok, timestamp} ->
@@ -36,7 +36,7 @@ defmodule IbEx.Client.Types.Bar do
             close: Decimal.new(close_str),
             volume: String.to_integer(volume_str),
             vwap: Decimal.new(vwap_str),
-            num_trades: String.to_integer(num_trades_str)
+            trades: String.to_integer(trades_str)
           }
         }
 
@@ -53,7 +53,7 @@ defmodule IbEx.Client.Types.Bar do
   end
 
   def from_historical_data_update([
-        num_trades_str,
+        trades_str,
         ts,
         open_str,
         high_str,
@@ -74,7 +74,7 @@ defmodule IbEx.Client.Types.Bar do
             close: Decimal.new(close_str),
             volume: String.to_integer(volume_str),
             vwap: Decimal.new(vwap_str),
-            num_trades: String.to_integer(num_trades_str)
+            trades: String.to_integer(trades_str)
           }
         }
 
@@ -100,7 +100,7 @@ defmodule IbEx.Client.Types.Bar do
         close: #{bar.close},
         volume: #{bar.volume},
         vwap: #{bar.vwap},
-        num_trades: #{bar.num_trades}
+        trades: #{bar.trades}
       }"
     end
   end
