@@ -46,12 +46,12 @@ defmodule IbEx.Client.Connection do
         {:ok, state, {:continue, :signal_connection_open}}
 
       {:error, reason} ->
-        Logger.error("Error stablishing connection: #{inspect(reason)}")
+        Logger.error("Error establishing connection: #{inspect(reason)}")
         {:stop, :connection_error}
     end
   rescue
     err ->
-      Logger.error("Error stablishing connection: #{inspect(err)}")
+      Logger.error("Error establishing connection: #{inspect(err)}")
       {:stop, :connection_error}
   end
 

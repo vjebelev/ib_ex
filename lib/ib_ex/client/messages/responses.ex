@@ -22,7 +22,7 @@ defmodule IbEx.Client.Messages.Responses do
     "14" => Messages.News.Bulletins,
     "15" => Messages.Misc.ManagedAccounts,
     "16" => "receive_fa",
-    "17" => "historical_data",
+    "17" => Messages.HistoricalBarData.Bars,
     "18" => "bond_contract_data",
     "19" => "scanner_parameters",
     "20" => "scanner_data",
