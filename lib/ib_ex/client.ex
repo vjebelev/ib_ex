@@ -94,8 +94,15 @@ defmodule IbEx.Client do
       {:ok, pid} ->
         table_ref = Subscriptions.initialize()
         trace_messages = Keyword.get(opts, :trace_messages, false)
+        client_id = Keyword.get(opts, :client_id, 0)
 
-        {:ok, %__MODULE__{connection: pid, subscriptions_table_ref: table_ref, trace_messages: trace_messages}}
+        {:ok,
+         %__MODULE__{
+           connection: pid,
+           subscriptions_table_ref: table_ref,
+           trace_messages: trace_messages,
+           client_id: client_id
+         }}
 
       err ->
         {:stop, {:connection_error, err}}
