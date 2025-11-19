@@ -56,9 +56,9 @@ defmodule IbEx.Client.Types.Bar do
         trades_str,
         ts,
         open_str,
+        close_str,
         high_str,
         low_str,
-        close_str,
         vwap_str,
         volume_str
       ]) do
