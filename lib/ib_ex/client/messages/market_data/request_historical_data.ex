@@ -105,7 +105,8 @@ defmodule IbEx.Client.Messages.MarketData.RequestHistoricalData do
      unit
      |> DateTime.to_string()
      |> String.replace(["-", "Z"], "")
-     |> String.replace(" ", "-")}
+     |> Kernel.<>(" UTC")
+    }
   end
 
   def format_end_date_time(nil), do: {:ok, ""}
